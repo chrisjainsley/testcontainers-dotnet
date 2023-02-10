@@ -13,7 +13,7 @@ public sealed class CosmosDbContainerTest : IAsyncLifetime
         var config = new CosmosDbTestcontainerConfiguration();
         _cosmosDbContainer = new TestcontainersBuilder<CosmosDbTestcontainer>()
                 .WithDatabase(config)
-                .WithExposedPort(config.Port)
+                .WithExposedPort(8081)
                 .Build();
     }
 
