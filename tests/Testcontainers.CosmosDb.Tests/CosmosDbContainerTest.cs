@@ -2,13 +2,19 @@ namespace Testcontainers.CosmosDb;
 
 public sealed class CosmosDbContainerTest : IAsyncLifetime
 {
-    private readonly CosmosDbTestcontainer _cosmosDbContainer = new TestcontainersBuilder<CosmosDbTestcontainer>()
-                .WithDatabase(new CosmosDbTestcontainerConfiguration())
-        .WithExposedPort(8081)
-                .Build();
+    private readonly CosmosDbTestcontainer _cosmosDbContainer;
 
     static CosmosDbContainerTest()
     {
+    }
+
+    public CosmosDbContainerTest()
+    {
+        var config = new CosmosDbTestcontainerConfiguration();
+        _cosmosDbContainer = new TestcontainersBuilder<CosmosDbTestcontainer>()
+                .WithDatabase(config)
+                .WithExposedPort(config.Port)
+                .Build();
     }
 
     public Task InitializeAsync()
