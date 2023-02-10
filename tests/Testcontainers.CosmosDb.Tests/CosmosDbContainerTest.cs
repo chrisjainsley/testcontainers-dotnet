@@ -4,6 +4,7 @@ public sealed class CosmosDbContainerTest : IAsyncLifetime
 {
     private readonly CosmosDbTestcontainer _cosmosDbContainer = new TestcontainersBuilder<CosmosDbTestcontainer>()
                 .WithDatabase(new CosmosDbTestcontainerConfiguration())
+        .WithExposedPort(8081)
                 .Build();
 
     static CosmosDbContainerTest()
