@@ -1,0 +1,11 @@
+global using System;
+global using System.Collections.Generic;
+global using System.Linq;
+global using System.Net;
+global using System.Threading.Tasks;
+global using DotNet.Testcontainers.Builders;
+global using DotNet.Testcontainers.Configurations;
+global using DotNet.Testcontainers.Containers;
+global using DotNet.Testcontainers.Commons;
+global using Xunit;
+global using Microsoft.Azure.Cosmos;
