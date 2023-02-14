@@ -29,7 +29,7 @@ public sealed class CosmosDbContainerTest : IAsyncLifetime
 
     [Fact]
     [Trait(nameof(DockerCli.DockerPlatform), nameof(DockerCli.DockerPlatform.Linux))]
-    public async Task ListBucketsReturnsHttpStatusCodeOk()
+    public async Task ReadAccountReturnsHttpStatusCodeOk()
     {
         // Given
         var cosmosClientOptions = new CosmosClientOptions

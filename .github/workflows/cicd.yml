@@ -71,6 +71,16 @@ jobs:
           path: |
             test-coverage
             test-results
+      - name: unit tests for Contoso Service Layer
+        uses: zyborg/dotnet-tests-report@v1
+        with:
+          project_path: tests
+          report_name: test_containers_tests
+          report_title: Test Cotnainers Tests
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          gist_name: test_containers_tests.md
+          gist_badge_label: 'Tests: %Counters_passed%/%Counters_total%'
+          gist_token: ${{ secrets.GIST_TOKEN }}
 
   publish:
     if: ${{ contains(fromJson('["develop", "main"]'), github.ref_name) }}
